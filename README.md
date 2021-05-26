@@ -1,4 +1,4 @@
-# Crime Intelligence:
+# Crime Intelligence
 ## Understanding and Predicting Factors Driving the Incidence of Crime in Chicago
 
 David Freitag
