@@ -1,9 +1,12 @@
 # Crime Intelligence:
 ## Understanding and Predicting Factors Driving the Incidence of Crime in Chicago
 
-- David Freitag
-- 5/13/21
-- CIS 9440 - Data Warehousing and Analystics
+David Freitag
+
+5/13/21
+
+CIS 9440 - Data Warehousing and Analystics
+
 
 **Project Objective:**
 Follow the Kimball Lifecycle to design and develop a public, cloud-based Data Warehouse with a functioning BI application.
@@ -45,11 +48,11 @@ Opportunities that arise from this project:
 
 **Data Sources:**
 
-1. [Chicago Crime Data](https://console.cloud.google.com/marketplace/product/city-of-chicago-public- data/chicago-crime)
+- [Chicago Crime Data](https://console.cloud.google.com/marketplace/product/city-of-chicago-public-data/chicago-crime)
 
-2. [Chicago Inflation and Unemployment Data](https://console.cloud.google.com/marketplace/product/bls-public-data/cpi- unemployement)
+- [Chicago Inflation and Unemployment Data](https://console.cloud.google.com/marketplace/product/bls-public-data/cpi-unemployement)
 
-3. [Chicago Weather Data](https://www.ncdc.noaa.gov/cdo- web/datasets/GHCND/locations/CITY:US170006/detail)
+- [Chicago Weather Data](https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US170006/detail)
 
 
 ### Business Requirements Definition
