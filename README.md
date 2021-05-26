@@ -85,10 +85,6 @@ List of Visualizations for each KPI:
 4. Comparative bar graph/line plot: total crimes compared to graduation rate over a time period
 5. Comparative line plot with trend lines: total crimes compared to unemployment rate over a time period
 
-BI Application Wireframe design:
-
-![All wireframes](images/wire_combined.png)
-
 Picture of the final BI Dashboard:
 
 ![Dashboard screenshot](images/dashboard_screenshot.png)
