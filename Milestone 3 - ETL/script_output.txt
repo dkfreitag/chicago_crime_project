@@ -1,0 +1,127 @@
+(base) davidfreitag@DavidFreitag-Mac chicago_crime_project_etl % python3 ETL.py
+2602894 crime records extracted from Google BigQuery public datasets: Chicago Crime Data
+Chicago Public Schools graduation data successfully extracted.
+Chicago Unemployment rate data successfully extracted.
+Extracting temperature data for 2011.
+Extracting temperature data for 2012.
+Extracting temperature data for 2013.
+Extracting temperature data for 2014.
+Extracting temperature data for 2015.
+Extracting temperature data for 2016.
+Extracting temperature data for 2017.
+Extracting temperature data for 2018.
+Extracting temperature data for 2019.
+Extracting precipitation data for 2011.
+Extracting precipitation data for 2012.
+Extracting precipitation data for 2013.
+Extracting precipitation data for 2014.
+Extracting precipitation data for 2015.
+Extracting precipitation data for 2016.
+Extracting precipitation data for 2017.
+Extracting precipitation data for 2018.
+Extracting precipitation data for 2019.
+             column_name        col_data_type  col_memory %_of_total_memory non_null_values %_of_non_nulls  ...       std     min         25%         50%         75%         max
+0                 arrest                 bool    2.482313          0.239504         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+1               domestic                 bool    2.482313          0.239504         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+2            description               object  182.366598         17.595492         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+3           primary_type               object  166.374586         16.052515         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+4               fbi_code               object  147.079001         14.190797         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+5   location_description               object  169.495044          16.35359         2596352      99.748664  ...       NaN     NaN         NaN         NaN         NaN         NaN
+6         community_area              float64   19.858505          1.916032         2602683      99.991894  ...     21.46    0.00       23.00       32.00       56.00       77.00
+7               district              float64   19.858505          1.916032         2602893      99.999962  ...      6.93    1.00        6.00       10.00       17.00       31.00
+8                   ward              float64   19.858505          1.916032         2602846      99.998156  ...     13.87    1.00       10.00       23.00       34.00       50.00
+9                   beat                int64   19.858505          1.916032         2602894          100.0  ...    695.46  111.00      613.00     1031.00     1713.00     2535.00
+10                 block               object  187.432944         18.084314         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+11              latitude              float64   19.858505          1.916032         2579509      99.101577  ...      0.09   36.62       41.77       41.86       41.91       42.02
+12             longitude              float64   19.858505          1.916032         2579509      99.101577  ...      0.06  -91.69      -87.71      -87.67      -87.63      -87.52
+13          x_coordinate              float64   19.858505          1.916032         2579509      99.101577  ...  17228.56    0.00  1152866.00  1166285.00  1176404.00  1205119.00
+14          y_coordinate              float64   19.858505          1.916032         2579509      99.101577  ...  32583.46    0.00  1858851.00  1892073.00  1908772.00  1951573.00
+15                  date  datetime64[ns, UTC]   19.858505          1.916032         2602894          100.0  ...       NaN     NaN         NaN         NaN         NaN         NaN
+
+[16 rows x 17 columns]
+  column_name col_data_type col_memory %_of_total_memory non_null_values %_of_non_nulls null_values %_of_nulls  ... count   mean   std   min   25%   50%   75%   max
+0   grad_rate       float64   0.000069             100.0               9          100.0           0        0.0  ...     9  67.37  8.75  54.2  59.1  68.2  74.7  78.0
+
+[1 rows x 17 columns]
+         column_name col_data_type col_memory %_of_total_memory non_null_values %_of_non_nulls null_values %_of_nulls  ... count  mean   std  min   25%   50%  75%   max
+0  unemployment_rate       float64   0.000824             100.0             108          100.0           0        0.0  ...   108  7.35  2.48  3.3  5.18  6.85  9.8  11.7
+
+[1 rows x 17 columns]
+  column_name col_data_type col_memory %_of_total_memory non_null_values %_of_non_nulls null_values %_of_nulls  ... count   mean    std    min    25%    50%    75%    max
+0        temp       float64   0.024162              50.0            3167          100.0           0        0.0  ...  3167  44.83  19.13 -23.08  30.92  44.96  60.98  84.92
+1        prcp       float64   0.024162              50.0            3167          100.0           0        0.0  ...  3167   1.19   3.20   0.00   0.00   0.00   0.59  55.20
+
+[2 rows x 17 columns]
+Cleaning Chicago Crime data for the CRIME_INCIDENT fact.
+100342 null values dropped.
+2113.0 duplicate values dropped.
+Chicago crime data cleaning successful.
+Cleaning Chicago Public Schools graduation data for the GRADUATION_RATE fact.
+Chicago Public Schools graduation data has no null values.
+Chicago Public Schools graduation data has no duplicate rows.
+Chicago Public Schools graduation data cleaning successful.
+Cleaning unemployment data for the CHICAGO_UNEMPLOYMENT fact.
+Chicago unemployment data has no null values.
+Chicago unemployement data has no duplicate rows.
+Chicago unemployement data cleaning successful.
+Cleaning weather data for the WEATHER fact.
+Chicago weather data has no null values.
+Chicago weather data has no duplicate rows.
+Chicago weather data cleaning successful.
+Date dimension created.
+    date_id   full_date  year  year_week  year_day  fiscal_year fiscal_qtr  month month_name week_day   day_name  day_is_weekday
+0  20050101  2005-01-01  2005          0         1         2005          1      1    January        6   Saturday               0
+1  20050102  2005-01-02  2005          1         2         2005          1      1    January        0     Sunday               0
+2  20050103  2005-01-03  2005          1         3         2005          1      1    January        1     Monday               1
+3  20050104  2005-01-04  2005          1         4         2005          1      1    January        2    Tuesday               1
+4  20050105  2005-01-05  2005          1         5         2005          1      1    January        3  Wednesday               1
+Crime code dimension created.
+   code_id fbi_code            primary_type
+0     1000       14         CRIMINAL DAMAGE
+1     1001       18               NARCOTICS
+2     1002      04A                 ASSAULT
+3     1003       24  PUBLIC PEACE VIOLATION
+4     1004       11      DECEPTIVE PRACTICE
+Location dimension created.
+   location_id location_description  community_area  district  ward  beat                  block   latitude  longitude  x_coordinate  y_coordinate
+0         1000            RESIDENCE            62.0       8.0  13.0   813    057XX S KILDARE AVE  41.789047 -87.730391     1148678.0     1866296.0
+1         1001               STREET            62.0       8.0  13.0   813        045XX W 59TH ST  41.785803 -87.735969     1147165.0     1865103.0
+2         1002               STREET            34.0       9.0  11.0   915  031XX S PRINCETON AVE  41.837745 -87.634093     1174795.0     1884240.0
+3         1003               STREET            52.0       4.0  10.0   432       095XX S AVENUE M  41.722525 -87.537711     1201448.0     1842483.0
+4         1004            RESIDENCE             9.0      16.0  41.0  1611       076XX W IBSEN ST  42.005965 -87.818038     1124301.0     1945185.0
+CRIME_INCIDENT fact created.
+    date_id  location_id  code_id  arrest  domestic          description
+0  20150923         1000     1000   False     False  CRIMINAL DEFACEMENT
+1  20161130         1003     1000   False     False           TO VEHICLE
+2  20130401         1008     1000   False     False          TO PROPERTY
+3  20111016         1008     1000   False     False          TO PROPERTY
+4  20120706         1008     1000   False     False          TO PROPERTY
+CHICAGO_UNEMPLOYMENT fact created.
+    date_id  unemployment_rate
+0  20110101               11.0
+1  20110102               11.0
+2  20110103               11.0
+3  20110104               11.0
+4  20110105               11.0
+GRADUATION_RATE fact created.
+    date_id  grad_rate
+0  20110101       54.2
+1  20110102       54.2
+2  20110103       54.2
+3  20110104       54.2
+4  20110105       54.2
+WEATHER fact created.
+    date_id   temp     prcp
+0  20110101  26.06  4.80315
+1  20110102  12.92  0.00000
+2  20110103  21.92  0.00000
+3  20110104  23.00  0.00000
+4  20110105   8.06  0.00000
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f90412828e0>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f9041234c10>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f9041234c40>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f904126dd00>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f904126d2b0>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f904126d460>
+Starting job <google.cloud.bigquery.job.load.LoadJob object at 0x7f9041393850>
+Total time for ETL in seconds: 276.5868430137634
